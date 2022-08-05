@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda</title>
+
+    <link rel="stylesheet" href="Css/agenda.css">
+</head>
+
+<body>
+
+    <header class="cabecalho">
+        <h1 class="titulo">Bem-vindo </h1>
+    </header>
+
+    <main class="main">
+
+        <section class="mid">
+            <form class='contactsActions' action="">
+                <h2>Gerencie seus Contatos</h2>
+                <label for="">Nome <input type="text" class="nameContact" name="" id="" placeholder=" Nome"
+                         required></label>
+                <label for="">Número <input type="number" class="numberContact" name="" id=""
+                        placeholder="(0XX) XXXX-XXXX"  required></label>
+                <button type="submit" class="addContact" class="btnGeral">Adicionar Contato</button>
+            </form>
+
+            <div class="contatos">
+                <h2>Contatos</h2>
+                <ul class="listContacts">
+                    <!-- <li></li> -->
+                </ul>
+            </div>
+
+
+        </section>
+
+    </main>
+
+    <footer>
+
+    </footer>
+
+    <script type="module" src="Js/controller/Agenda.js"></script>
+    <script type="module" src="Js/controller/editContact.js"></script>
+    <script type="module" src="Js/controller/DeleteContact.js"></script>
+    <script type="module" src="Js/controller/addContact.js"> </script>
+</body>
+
+</html>
