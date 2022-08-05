@@ -70,4 +70,5 @@ let addContact = async (name, number, key) => {
 }
 
 
+
 export let servidor = {registrarCliente, logarUsuario, viewContacts, addContact}
