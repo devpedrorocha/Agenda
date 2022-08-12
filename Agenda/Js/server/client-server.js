@@ -1,10 +1,10 @@
 
-let registrarCliente = (nome, email, password)=>{
+let registrarCliente = (nome, email, password) => {
 
-    return fetch("http://localhost:3333/enter/register",{
-        method:"POST",
-        headers:{
-            "Content-Type" : "application/json"
+    return fetch("http://localhost:3333/enter/register", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
         },
         body: JSON.stringify({
             name: nome,
@@ -12,41 +12,35 @@ let registrarCliente = (nome, email, password)=>{
             password: password
         })
     })
-    
 }
-
-
 
 let logarUsuario = async (email, password) => {
 
     return fetch("http://localhost:3333/enter/login", {
-        method:"POST",
+        method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
             email: email,
-            password: password 
-        }) 
+            password: password
+        })
     })
-    .then(response => {
-        return response.json()
-    })
-        
+        .then(response => {
+            return response.json()
+        })
 }
 
-
-let viewContacts = async (key) =>{
+let viewContacts = async (key) => {
 
     return fetch("http://localhost:3333/api/viewContacts", {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
-            "authorization-token" : `${key}`,
+            "authorization-token": `${key}`,
         }
     })
-        .then(response => 
-            {return response.json()})
+        .then(response => { return response.json() })
 
 }
 
@@ -56,7 +50,7 @@ let addContact = async (name, number, key) => {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
-            "authorization-token" : `${key}`,
+            "authorization-token": `${key}`,
         },
         body: JSON.stringify({
             name: name,
@@ -66,9 +60,32 @@ let addContact = async (name, number, key) => {
         .then(response => {
             return response.json()
         })
+}
 
+let deleteContact = async (id, key) => {
+    return fetch(`http://localhost:3333/api/deleteContact/${id}`, {
+        method: "DELETE",
+        headers: {
+            "authorization-token": `${key}`,
+            "Content-Type": "application/json"
+        }
+    })
+        .then(response => { return response.json() })
+}
+
+let editContact = async (id, key, name, number) => {
+    return fetch (`http://localhost:3333/api/editContact/${id}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json",
+            "authorization-token": `${key}`
+        },
+        body: JSON.stringify({
+            name: name,
+            number: number
+        })
+    }).then(response => {return response.json()})
 }
 
 
-
-export let servidor = {registrarCliente, logarUsuario, viewContacts, addContact}
+export let servidor = { registrarCliente, logarUsuario, viewContacts, addContact, deleteContact, editContact}

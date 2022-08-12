@@ -46,7 +46,7 @@ h1 {
     justify-content: center;
 }
 
-.mid{
+.mid {
     height: 50%;
     width: 50%;
     align-items: center;
@@ -56,37 +56,40 @@ h1 {
 }
 
 
-h2{
+h2 {
     color: var(--midnight);
     text-align: center;
     padding: 20px;
 }
 
-input{
+input {
     padding: 8px;
+    margin-right: 15px;
     border-radius: 4px;
-    border: 1px ;
+    border: 1px;
 }
 
-button{
+button {
     border-radius: 4px;
     padding: 6px;
+    margin-right: 10px;
     border: 2px solid var(--light);
     opacity: 0.7;
-    transition: opacity 0.5s; 
+    transition: opacity 0.5s;
 }
 
-button:hover{
+button:hover {
     cursor: pointer;
     opacity: 1;
+    
 }
 
 
-.contatos{
+.contatos {
     margin-top: 80px;
 }
 
-ul{
+ul {
     padding: 15px;
     background-color: #fff;
     border-radius: 5px;
@@ -94,10 +97,47 @@ ul{
     padding: 35px;
 }
 
-li{
+li {
+    height: 30px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
     padding-bottom: 20px;
+    display: flex;
 }
 
-.contatos{
+.contatos {
     width: 80%;
+}
+
+
+
+#deleteBtn {
+    color: white;
+    background-color: rgb(201, 82, 82);
+    opacity: 0.7;
+    border: 1px solid #fff;
+}
+
+#deleteBtn:hover{
+    opacity: 1;
+}
+
+
+#divBtn{
+   left: 0;
+}
+
+#spanNome{
+    width: 40%;
+}
+
+#spanNumero{
+    width: 30%;
+}
+
+
+
+.hide{
+    display: none;
 }
